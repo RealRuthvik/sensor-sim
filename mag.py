@@ -27,6 +27,7 @@ mouseX = 0
 previousMouseX = 0
 firstMove = True
 
+# mouse capture refined by AI
 def mouseMoved(event):
     global mouseX, previousMouseX, firstMove
 
@@ -46,18 +47,16 @@ def update(frame):
 
     dx = mouseX - previousMouseX
     previousMouseX = mouseX
-
-    # Change heading based on mouse movement
+    
     heading += dx * 0.01
 
-    # Simulate Earth's magnetic field (~50 µT)
     B = 50
 
     bx = B * np.cos(heading)
     by = B * np.sin(heading)
-    bz = 10  # small constant vertical component
+    bz = 10 
 
-    # Add small noise
+    # noise added by AI
     bx += np.random.normal(0, 1)
     by += np.random.normal(0, 1)
     bz += np.random.normal(0, 0.5)
@@ -77,4 +76,5 @@ def update(frame):
     return lineBX, lineBY, lineBZ
 
 ani = FuncAnimation(fig, update, interval=50)
+
 plt.show()
