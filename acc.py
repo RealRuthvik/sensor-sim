@@ -11,7 +11,7 @@ fig, ax = plt.subplots()
 
 lineAX, = ax.plot([], [], label="Accel X")
 lineAY, = ax.plot([], [], label="Accel Y")
-lineAZ, = ax.plot([], [], label="Accel Z (Gravity)")
+lineAZ, = ax.plot([], [], label="Accel Z")
 
 ax.set_xlim(0, 10)
 ax.set_ylim(-50, 50)
@@ -32,7 +32,7 @@ previousVY = 0
 
 firstMove = True
 
-
+# mouse capture refined by AI
 def mouseMoved(event):
     global mouseX, mouseY, previousMouseX, previousMouseY, firstMove
 
@@ -61,21 +61,18 @@ def update(frame):
 
     previousTime = currentTime
 
-    # Position change
     dx = mouseX - previousMouseX
     dy = mouseY - previousMouseY
 
     previousMouseX = mouseX
     previousMouseY = mouseY
 
-    # Velocity
     vx = dx / dt * 0.01
     vy = dy / dt * 0.01
 
-    # Acceleration (derivative of velocity)
     ax_val = (vx - previousVX) / dt
     ay_val = (vy - previousVY) / dt
-    az_val = 9.8  # simulate gravity
+    az_val = 9.8
 
     previousVX = vx
     previousVY = vy
@@ -98,4 +95,5 @@ def update(frame):
 
 
 ani = FuncAnimation(fig, update, interval = 50)
+
 plt.show()
