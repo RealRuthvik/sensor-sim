@@ -29,6 +29,7 @@ previousMouseY = 0
 firstMove = True
 
 
+# mouse capture refined by AI
 def mouseMoved(event):
     global mouseX, mouseY, previousMouseX, previousMouseY, firstMove
 
@@ -84,4 +85,5 @@ def update(frame):
 
 
 ani = FuncAnimation(fig, update, interval = 50)
+
 plt.show()
