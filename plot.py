@@ -4,6 +4,8 @@ from acc import Accelerometer
 from gyro import Gyroscope
 from mag import Magnetometer
 
+# This class and methods within this class were made with help from ai.
+
 class RotationalDynamics:
     def __init__(self, inertia):
         self.inertia = np.array(inertia)
