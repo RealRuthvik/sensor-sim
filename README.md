@@ -7,4 +7,4 @@ A Python based simulation of rigid body rotational dynamics and sensor measureme
 * Signal Processing: Implements an exponential moving average filter to smooth noisy measurements.
 * Visualization: Plots true dynamics against lightly and heavily filtered sensor data across all three axes.
 
-[Uploading Figure_1.png…]()
+![Plot](Figure_1.png)
