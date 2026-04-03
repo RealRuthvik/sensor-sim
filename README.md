@@ -6,3 +6,5 @@ A Python based simulation of rigid body rotational dynamics and sensor measureme
 * Sensor Models: Simulates raw sensor readings by injecting Gaussian noise and static bias into true values.
 * Signal Processing: Implements an exponential moving average filter to smooth noisy measurements.
 * Visualization: Plots true dynamics against lightly and heavily filtered sensor data across all three axes.
+
+[Uploading Figure_1.png…]()
